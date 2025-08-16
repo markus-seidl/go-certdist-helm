@@ -68,7 +68,7 @@ spec:
       volumes:
         - name: certdist-config
           secret:
-            secretName: {{ include "go-certdist.fullname" . }}-certdist-config
+            secretName: {{ include "go-certdist.fullname" . }}-config
             optional: false
       {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}
