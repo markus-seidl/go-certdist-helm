@@ -129,6 +129,7 @@ affinity: {}
 # This is the config for certdist, which will be mounted as a secret
 certdist:
   # ["server", "/etc/certdist/config.yaml"]
+  command: ["/certdist"]
   args: {}
   config: {}
 
