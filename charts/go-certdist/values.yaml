@@ -41,13 +41,13 @@ podLabels: {}
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext:
+securityContext: {}
   # capabilities:
   #   drop:
   #   - ALL
-  readOnlyRootFilesystem: true
-  runAsNonRoot: false
-  runAsUser: 1000
+#  readOnlyRootFilesystem: true
+#  runAsNonRoot: true
+#  runAsUser: 1000
 
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
@@ -128,7 +128,8 @@ affinity: {}
 
 # This is the config for certdist, which will be mounted as a secret
 certdist:
-  args: ["server", "/etc/certdist/config.yaml"]
+  # ["server", "/etc/certdist/config.yaml"]
+  args: {}
   config: {}
 
 
