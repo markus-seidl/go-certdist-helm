@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "go-certdist.fullname" . }}-test-connection"
+  labels:
+    {{- include "go-certdist.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "go-certdist.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
