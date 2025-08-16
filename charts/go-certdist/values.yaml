@@ -130,7 +130,7 @@ affinity: {}
 certdist:
   # ["server", "/etc/certdist/config.yaml"]
   command: ["/certdist"]
-  args: {}
+  args: ["server", "/etc/certdist/config.yaml"]
   config: {}
 
 
