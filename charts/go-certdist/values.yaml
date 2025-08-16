@@ -19,8 +19,6 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-host: "certdist.example.com"
-
 # This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
   # Specifies whether a service account should be created
@@ -65,22 +63,23 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: {{ .Values.host }}
-      paths:
-        - backend:
-            service:
-              name: {{ include "go-certdist.fullname" . }}
-              port:
-                number: 8080
-          path: /
-          pathType: Prefix
-  tls:
-    - hosts:
-        - {{ .Values.host }}
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+#   hosts:
+#    - host: {{ .Values.host }}
+#      paths:
+#        - backend:
+#            service:
+#              name: {{ include "go-certdist.fullname" . }}
+#              port:
+#                number: 8080
+#          path: /
+#          pathType: Prefix
+#  tls:
+#    - hosts:
+#        - {{ .Values.host }}
 
 resources:
    limits:
