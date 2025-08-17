@@ -13,9 +13,9 @@ spec:
       {{- include "go-certdist.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
+      {{- with (merge (dict "checksum/config" ( .Values.certdist.config | toYaml | sha256sum)) .Values.podAnnotations) }}
       annotations:
-        {{- toYaml . | nindent 8 }}
+        {{- . | toYaml | nindent 8 }}
       {{- end }}
       labels:
         {{- include "go-certdist.labels" . | nindent 8 }}
