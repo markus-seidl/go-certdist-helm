@@ -3,6 +3,16 @@ entries:
   go-certdist:
   - apiVersion: v2
     appVersion: 1.1.0
+    created: "2025-08-17T08:02:21.32543987Z"
+    description: A Helm chart for Kubernetes
+    digest: 3e155bb879393d076a348718def294274c680a78f6e8ef08b8788494150144fa
+    name: go-certdist
+    type: application
+    urls:
+    - https://github.com/markus-seidl/go-certdist-helm/releases/download/go-certdist-0.1.11/go-certdist-0.1.11.tgz
+    version: 0.1.11
+  - apiVersion: v2
+    appVersion: 1.1.0
     created: "2025-08-16T16:40:07.733872785Z"
     description: A Helm chart for Kubernetes
     digest: 5884140fb8284ca010f5b0c8adbc71790bd76576916275834d27a3d8e4b98b96
@@ -91,4 +101,4 @@ entries:
     urls:
     - https://github.com/markus-seidl/go-certdist-helm/releases/download/go-certdist-0.1.1/go-certdist-0.1.1.tgz
     version: 0.1.1
-generated: "2025-08-16T16:40:07.733907661Z"
+generated: "2025-08-17T08:02:21.32548297Z"
